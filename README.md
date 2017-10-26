@@ -13,8 +13,8 @@ Makers must do the following to participate in the Hackathon:
 * Create a working software application using Amazon Kinesis, AWS IoT, or both.
 * Create a demonstration video that shows your application in action.
 * Enter your application during the Hackathon Submission Period:
-* Include a link to your application code on GitHub or BitBucket. Your code repository may be public or private. If your repository is private, access must be given in the testing instructions provided with your submission. Code will be used only for application review and testing.
-* Include deployment files and testing instructions needed for testing your application. Include your AWS CloudFormation template file and if needed for your solution, include any side scripts of HTML pages needed for deployment.
-* Include any sample data you used for development in CSV or JSON format. If you generated the data using the Kinesis Data Generator or the AWS IoT Simulator, include instructions so we can regenerate the sample data for testing purposes.
-* Complete and enter all of the required fields and questions on the “Enter a Submission” page of the Hackathon Website, including explaining how the application is cost-effective, scalable, and well-implemented and how it can impact individuals, businesses, or communities. Follow the additional requirements outlined below.
+  * Include a link to your application code on GitHub or BitBucket. Your code repository may be public or private. If your repository is private, access must be given in the testing instructions provided with your submission. Code will be used only for application review and testing.
+  * Include deployment files and testing instructions needed for testing your application. Include your AWS CloudFormation template file and if needed for your solution, include any side scripts of HTML pages needed for deployment.
+  * Include any sample data you used for development in CSV or JSON format. If you generated the data using the Kinesis Data Generator or the AWS IoT Simulator, include instructions so we can regenerate the sample data for testing purposes.
+  * Complete and enter all of the required fields and questions on the “Enter a Submission” page of the Hackathon Website, including explaining how the application is cost-effective, scalable, and well-implemented and how it can impact individuals, businesses, or communities. Follow the additional requirements outlined below.
 (each a “Submission”)
