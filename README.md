@@ -7,9 +7,9 @@ Makers must do the following to participate in the Hackathon:
 
 * Register for the Hackathon on the Hackathon Website by clicking the “Register for this Hackathon” button. To complete registration, sign up to create a Devpost account, or log in with an existing Devpost account. There is no charge for creating a Devpost account. This will enable you to receive important updates and access the “Enter a Submission” page.
 * Sign up for a developer account on Amazon Web Services (“AWS”). You can get started with AWS for free. The AWS Free Tier includes select services available for 12 months following your AWS sign-up date, as well as additional service offers that do not automatically expire at the end of your 12 month AWS Free Tier term. 
- * Once you have an AWS account, sign up for AWS IoT Platform and/or Amazon Kinesis.
- * AWS IoT Platform includes a free tier of 250,000 messages (published or delivered) per month for 12 months. When your 12-month free usage term expires, or if your application use exceeds the free tier, you simply pay standard, pay-as-you-go service rates. Details and terms here: https://aws.amazon.com/iot-platform/pricing/.
- * Amazon Kinesis does not include a free tier but Amazon will provide a $25 in AWS Credit to individuals registered for the Hackathon and the credits will be valid for the duration of the Hackathon. In order to receive AWS Credits, you must complete the form at https://pages.awscloud.com/devadopt_NAMER_AWS-IoT-App-Challenge.html and provide your AWS Account ID.  
+  * Once you have an AWS account, sign up for AWS IoT Platform and/or Amazon Kinesis.
+  * AWS IoT Platform includes a free tier of 250,000 messages (published or delivered) per month for 12 months. When your 12-month free usage term expires, or if your application use exceeds the free tier, you simply pay standard, pay-as-you-go service rates. Details and terms here: https://aws.amazon.com/iot-platform/pricing/.
+  * Amazon Kinesis does not include a free tier but Amazon will provide a $25 in AWS Credit to individuals registered for the Hackathon and the credits will be valid for the duration of the Hackathon. In order to receive AWS Credits, you must complete the form at https://pages.awscloud.com/devadopt_NAMER_AWS-IoT-App-Challenge.html and provide your AWS Account ID.  
 * Create a working software application using Amazon Kinesis, AWS IoT, or both.
 * Create a demonstration video that shows your application in action.
 * Enter your application during the Hackathon Submission Period:
