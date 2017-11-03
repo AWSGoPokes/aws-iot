@@ -18,13 +18,18 @@ The motivation to help rural people led us to SmartJacket, an innovative mobile 
 * 4. Mobile App: Rural residents/doctors can use Mobile App to see in real-time all the visualized health data. More important, the app can be used to set up a remote diagnosis/test (thanks to Smart Jacket, voice call and/or video call), which is impossible before our app.  The predictive models can also alert early both residents and doctors about diseases.
 
 ## III. What consumer or market problem will this App solve? (200 words or less) *
-This innovation targets to solve the problems in rural healthcare. 
+This innovation targets to solve two problems in rural healthcare. 
 * The first problem is that rural residents have greater transportation difficulties reaching health care providers. With SmartJacket, the rural residents do not need to go to the hospital to make a test/diagnosis. Instead, he/she wears the Smart Jacket, book a voice/video call with the doctor/physician and both residents and doctor/physician can see the visualized data in real-time.
 * The second problem is that rural residents tend to be poorer. They can not afford the cost of many healthcare services (even simple like ECG) at the hospital. SmartJacket provides a cheap solution for them. ECG sensors (and many other wearable health sensors) are becoming cheaper and cheaper while the mobile app itself is free. 
 
 ## IV. Describe briefly why is there a need for this App? (200 words or less) *
+There is a strong need for this App in rural healthcare. At the time of 2010, almost 60 million people, about 19 percent of the population, lived in rural areas of the United States. The situation is even worse in Oklahoma, with 30% of the population living in rural areas. The obstacles faced by health care providers and patients in rural areas are vastly different than those in urban areas. Economic factors, cultural and social differences, educational shortcomings, lack of recognition by legislators and the sheer isolation of living in remote areas all conspire to create health care disparities and impede rural Americans in their struggle to lead normal, healthy lives [according to NRHA]. 
+As far as our knowledge, so far there is no existing solutions that effectively help rural residents to access high quality healthcare remotely with an affordable price. On the other hand, healthcare providers also need a solution to reach a wider range of rural residents who currently are too far from them. 
+Therefore, we believe that our solution can be very important to both rural residents and healthcare providers.
 
 ## V. Are there similar Apps in the market, if yes, what makes this App idea unique? (200 words or less) *
+* Brian Turyabagye [biomedical smart jacket](http://www.cnn.com/2017/10/24/africa/biomedical-jacket-uganda-africa-tech-rising/index.html)
+
 
 ## VI. Describe the typical user for this app?    *
 
