@@ -18,8 +18,9 @@ The motivation to help rural people led us to SmartJacket, an innovative mobile 
 * 4. Mobile App: Rural residents/doctors can use Mobile App to see in real-time all the visualized health data. More important, the app can be used to set up a remote diagnosis/test (thanks to Smart Jacket, voice call and/or video call), which is impossible before our app.  The predictive models can also alert early both residents and doctors about diseases.
 
 ## III. What consumer or market problem will this App solve? (200 words or less) *
-This innovation targets to solve the problems in rural healthcare. The first problem is that rural residents have greater transportation difficulties reaching health care providers. With SmartJacket, the rural residents do not need to go to the hospital to make a test/diagnosis. Instead, he/she wears the Smart Jacket, book a voice/video call with the doctor/physician and both residents and doctor/physician can see the visualized data in real-time.
-The second problem is that rural residents tend to be poorer. They can not afford the cost of many healthcare services (even simple like ECG) at the hospital. SmartJacket provides a cheap solution for them. ECG sensors (and many other wearable health sensors) are becoming cheaper and cheaper while the mobile app itself is free. 
+This innovation targets to solve the problems in rural healthcare. 
+* The first problem is that rural residents have greater transportation difficulties reaching health care providers. With SmartJacket, the rural residents do not need to go to the hospital to make a test/diagnosis. Instead, he/she wears the Smart Jacket, book a voice/video call with the doctor/physician and both residents and doctor/physician can see the visualized data in real-time.
+* The second problem is that rural residents tend to be poorer. They can not afford the cost of many healthcare services (even simple like ECG) at the hospital. SmartJacket provides a cheap solution for them. ECG sensors (and many other wearable health sensors) are becoming cheaper and cheaper while the mobile app itself is free. 
 
 ## IV. Describe briefly why is there a need for this App? (200 words or less) *
 
