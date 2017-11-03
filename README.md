@@ -13,7 +13,7 @@ solution to help rural residents in Oklahoma and in America to access healthcare
 
 The motivation to help rural people led us to SmartJacket, an innovative mobile app that combines the power of mobile app, cloud computing, and wireless sensors to benefits rural residents and healthcare providers. Our solution includes four pillars: Smart Jacket (for rural residents to wear), Amazon AWS Cloud (to store all health data safely), Predictive Model (to predict diseases from data), and Mobile App. All are described in detail as follows:
 * 1. Smart Jacket: in the laboratory, we already built the Smart Jacket attached with Electrocardiogram (ECG) sensors to assess the electrical and muscular functions of the heart. The ECG has grown to be one of the most commonly used medical tests in modern medicine. 
-* 2. Amazon Cloud: ECG sensors will send data wirelessly (via Bluetooth Low Energy or BLE) to an Arduino board. This board will synchronize data to Amazon Cloud (AWS) via MQTT protocol periodically. 
+* 2. Amazon Cloud: ECG sensors will send data wirelessly (via Bluetooth Low Energy or BLE) to SmartJacket mobile app. The mobile app will synchronize data to Amazon Cloud (AWS) via MQTT protocol periodically. 
 * 3. Models: on Cloud, we will build predictive models to make the most out of existing health data (e.g. the model can early predict when a resident is in sick and alert them). The model will be smarter over time when more data are available to learn.
 * 4. Mobile App: Rural residents/doctors can use Mobile App to see in real-time all the visualized health data. More important, the app can be used to set up a remote diagnosis/test (thanks to Smart Jacket, voice call and/or video call), which is impossible before our app.  The predictive models can also alert early both residents and doctors about diseases.
 
@@ -29,9 +29,10 @@ Therefore, we believe that our solution can be very important to both rural resi
 
 ## V. Are there similar Apps in the market, if yes, what makes this App idea unique? (200 words or less) *
 * Brian Turyabagye [biomedical smart jacket](http://www.cnn.com/2017/10/24/africa/biomedical-jacket-uganda-africa-tech-rising/index.html)
-
+A smart jacket that measures body temperature, heart rate and lung condition. The jacket is connected to a mobile phone app via Bluetooth which sends, records and analyses the medical data, ready for a healthcare professional to make an informed diagnosis. Currently, the jacket is still in the prototype phase.
+The idea is close to our Smart Jacket and they are also in the prototype phase as we are. However, we believe that to serve thousands to millions rural residents, all the data and processing (training and runing models) have to be hosted on the Cloud. Besides, our type of sensors, the jacket industrial design to bring comfort to users, the specific predictive models and mobile app design are all different from them
 
 ## VI. Describe the typical user for this app?    *
-
+Currently, we target to rural residents and healthcare providers in America. However, the solution can be extended to whoever need a remote and high quality healthcare services with an affordable price.
 ## VII. Who will pay for the App? *
 
