@@ -12,10 +12,10 @@ The situation is even worse in Oklahoma, with 30% of the population living in ru
 solution to help rural residents in Oklahoma and in America to access healthcare services.
 
 The motivation to help rural people led us to SmartJacket, an innovative mobile app that combines the power of mobile app, cloud computing, and wireless sensors to benefits rural residents and healthcare providers. Our solution includes four pillars: Smart Jacket (for rural residents to wear), Amazon AWS Cloud (to store all health data safely), Predictive Model (to predict diseases from data), and Mobile App. All are described in detail as follows:
-* 1. Smart Jacket: in the laboratory, we already built the Smart Jacket attached with Electrocardiogram (ECG) sensors to assess the electrical and muscular functions of the heart. The ECG has grown to be one of the most commonly used medical tests in modern medicine. 
-* 2. Amazon Cloud: ECG sensors will send data wirelessly (via Bluetooth Low Energy or BLE) to SmartJacket mobile app. The mobile app will synchronize data to Amazon Cloud (AWS) via MQTT protocol periodically. 
-* 3. Models: on Cloud, we will build predictive models to make the most out of existing health data (e.g. the model can early predict when a resident is in sick and alert them). The model will be smarter over time when more data are available to learn.
-* 4. Mobile App: Rural residents/doctors can use Mobile App to see in real-time all the visualized health data. More important, the app can be used to set up a remote diagnosis/test (thanks to Smart Jacket, voice call and/or video call), which is impossible before our app.  The predictive models can also alert early both residents and doctors about diseases.
+* 1. Smart Jacket: The prototype Smart Jacket includes textile ECG electrodes and a respiration belt. A single lead ECG signal is collected from the garment using the Lead-II configuration. A sensor platform and an MCU are put into a 3D-printed box integrated in the shirt. The signal is amplified and sampled at a rate of 200Hz,  which is sufficient for detecting heart rate, studying heart rate variability, arrhythmias, and other heart-related disorders. 
+* 2. Amazon Cloud: ECG data is sent wirelessly via Bluetooth Low Energy (BLE) to the SmartJacket mobile app. The mobile app will periodically synchronize data via MQTT protocol to Amazon Cloud (AWS), where remote caregivers or doctor can access to monitor real-time ECG or other health statistic and evaluation in real-time.
+* 3. Models: on Cloud, we will build classification and predictive models to make the most out of existing health data (e.g. the model may detect disorders or output early health issue prediction). The model will be smarter over time when more data are available to learn.
+* 4. Mobile App: Rural residents/doctors can use Mobile App to see in real-time all the visualized health data. More importantly, the health diagnosis outputs from the predictive models in the cloud are streamed back to the App, and an alert is raised whenever the resident is at risk. The remote caregiver may double check the real-time visualized health data shown in the app, or can set up  voice call or video call to the resident. This forms a closed-loop healthcare system that provides timely healthcare delivery services. 
 
 ## III. What consumer or market problem will this App solve? (200 words or less) *
 This innovation targets to solve two problems in rural healthcare. 
@@ -35,4 +35,5 @@ The idea is close to our Smart Jacket and they are also in the prototype phase a
 ## VI. Describe the typical user for this app?    *
 Currently, we target to rural residents and healthcare providers in America. However, the solution can be extended to whoever need a remote and high quality healthcare services with an affordable price.
 ## VII. Who will pay for the App? *
-
+Healthcare provider
+Insurance companies 
