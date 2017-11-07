@@ -1,0 +1,366 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<!--
+Modified from the Debian original for Ubuntu
+Last updated: 2014-03-19
+See: https://launchpad.net/bugs/1288690
+-->
+<head>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>ASCC Cloud</title>
+<style type="text/css" media="screen">
+* {
+margin: 0px 0px 0px 0px;
+padding: 0px 0px 0px 0px;
+}
+
+body, html {
+padding: 3px 3px 3px 3px;
+
+	background-color: #D8DBE2;
+
+	font-family: Verdana, sans-serif;
+	font-size: 11pt;
+	text-align: center;
+}
+
+div.main_page {
+position: relative;
+display: table;
+
+width: 800px;
+
+	margin-bottom: 3px;
+	margin-left: auto;
+	margin-right: auto;
+padding: 0px 0px 0px 0px;
+
+	border-width: 2px;
+	border-color: #212738;
+	border-style: solid;
+
+	background-color: #FFFFFF;
+
+	text-align: center;
+}
+
+div.page_header {
+height: 99px;
+width: 100%;
+
+	background-color: #F5F6F7;
+}
+
+div.page_header span {
+margin: 15px 0px 0px 50px;
+
+	font-size: 180%;
+	font-weight: bold;
+}
+
+div.page_header img {
+margin: 3px 0px 0px 40px;
+
+border: 0px 0px 0px;
+}
+
+div.table_of_contents {
+clear: left;
+
+	min-width: 200px;
+
+margin: 3px 3px 3px 3px;
+
+	background-color: #FFFFFF;
+
+	text-align: left;
+}
+
+div.table_of_contents_item {
+clear: left;
+
+width: 100%;
+
+margin: 4px 0px 0px 0px;
+
+	background-color: #FFFFFF;
+
+color: #000000;
+	text-align: left;
+}
+
+div.table_of_contents_item a {
+margin: 6px 0px 0px 6px;
+}
+
+div.content_section {
+margin: 3px 3px 3px 3px;
+
+	background-color: #FFFFFF;
+
+	text-align: left;
+}
+
+div.content_section_text {
+padding: 4px 8px 4px 8px;
+
+color: #000000;
+	font-size: 100%;
+}
+
+div.content_section_text pre {
+margin: 8px 0px 8px 0px;
+padding: 8px 8px 8px 8px;
+
+	border-width: 1px;
+	border-style: dotted;
+	border-color: #000000;
+
+	background-color: #F5F6F7;
+
+	font-style: italic;
+}
+
+div.content_section_text p {
+	margin-bottom: 6px;
+}
+
+div.content_section_text ul, div.content_section_text li {
+padding: 4px 8px 4px 16px;
+}
+
+div.section_header {
+padding: 3px 6px 3px 6px;
+
+	background-color: #8E9CB2;
+
+color: #FFFFFF;
+	font-weight: bold;
+	font-size: 112%;
+	text-align: center;
+}
+
+div.section_header_red {
+	background-color: #CD214F;
+}
+
+div.section_header_grey {
+	background-color: #9F9386;
+}
+
+.floating_element {
+position: relative;
+float: left;
+}
+
+div.table_of_contents_item a,
+div.content_section_text a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
+div.table_of_contents_item a:link,
+div.table_of_contents_item a:visited,
+div.table_of_contents_item a:active {
+color: #000000;
+}
+
+div.table_of_contents_item a:hover {
+	background-color: #000000;
+
+color: #FFFFFF;
+}
+
+div.content_section_text a:link,
+div.content_section_text a:visited,
+div.content_section_text a:active {
+	background-color: #DCDFE6;
+
+color: #000000;
+}
+
+div.content_section_text a:hover {
+	background-color: #000000;
+
+color: #DCDFE6;
+}
+
+div.validator {
+}
+
+.main_photo{
+    position:relative;
+    width:400px;
+    height:150px;
+}
+.inlay{
+    position:absolute;
+    
+    top: 40px;
+    right: 100px;
+   
+}
+
+</style>
+<!--   <script src="jquery-2.1.4.js"></script>  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script type="text/javascript" src="canvasjs.min.js"></script>
+<script>
+
+
+
+// this function is run when $.getJSON() is completed
+
+
+window.onload = function () {
+	var lastID = -1; // set 0 as default to ensure we get the data from the start
+
+	var ecgDps = [];
+	var resDps = [];
+	var spo2Dps =[];
+	var bpmDps = [];
+	var chartLen=2000;
+	var xVal=0;
+	var stepLen=250;
+
+	////initial graph
+	//for (var j = 0; j < chartLen; j++) {	
+	//	yVal = 0;
+	//	ecgDps.push({
+	//		x: xVal,
+	//		y: yVal
+	//	});
+	//	resDps.push({
+	//		x: xVal,
+	//		y: yVal
+	//	});
+	//	xVal++;
+	//};
+	var ecgChart = new CanvasJS.Chart("ecgChartContainer",{
+		title :{
+		text: "Live ECG Data"
+				},
+		axisX: {						
+		title: "Time"
+				},
+		axisY: {	
+		minimum: -2,
+		maximum: 5,
+		title: "ECG"
+				},
+		data: [{
+			type: "line",
+			dataPoints : ecgDps
+		}]
+	});
+	var resChart = new CanvasJS.Chart("resChartContainer",{
+		title :{
+		text: "Live Respiration Data"
+				},
+		axisX: {						
+		title: "Time"
+				},
+		axisY: {	
+		minimum: -20,
+		maximum: 400,		
+		title: "Respiration"
+				},
+		data: [{
+			type: "line",
+			dataPoints : resDps
+		}]
+	});
+
+	//ecgChart.render();
+	//resChart.render();
+	//    ecgDps=[];
+	var updateInterval = 400;
+	var spo2Value = [];
+	var bpmValue = [];
+	var updateChart = function () {
+		var url = 'getdata1.php'; // the PHP file
+		var data = {'lastID': lastID}; // input for the PHP file
+
+		//$.getJSON(url, data, requestCallback);
+		$.getJSON(url, data, function(data, textStatus, xhr){
+			lastID = data.lastID; // save lastID
+			
+			// loop through data
+			$.each(data.sensorData, function(index, value) {
+				
+				ecgDps.push({x: parseInt(value.ID),y: parseFloat(value.ecgValue)});
+				resDps.push({x: parseInt(value.ID),y: parseFloat(value.resValue)});
+				spo2Dps[bpmDps.length]=(parseInt(value.spo2Value));
+				bpmDps[bpmDps.length]=(parseInt(value.bpmValue));
+			});
+			
+			//console.log(bpmDps);
+		//	console.log(spo2Dps);
+		});
+		// send request
+		if (ecgDps.length >  chartLen + stepLen-1)
+		{
+			//console.log(ecgDps);
+			ecgDps.splice(0,stepLen);
+			resDps.splice(0,stepLen);
+			spo2Dps.splice(0,stepLen);
+			bpmDps.splice(0,stepLen);
+		}
+		ecgChart.render();		
+		resChart.render();		
+		document.getElementById("Spo2Value").innerHTML = Math.max.apply(null, spo2Dps).toString();
+		document.getElementById("bpmValue").innerHTML = Math.max.apply(null, bpmDps).toString();
+		//console.log(Math.max.apply(null, spo2Dps));
+		//console.log(Math.max.apply(null, bpmDps));
+		//ecgDps.length=0;
+		// update chart after specified time. 
+	};
+
+	setInterval(function(){updateChart()}, updateInterval); 
+}
+
+
+
+</script>
+</head>
+<body>
+<h1> Cloud-based Personal Healthcare Platform</h1>
+</br>
+<div align="center">
+<table width="400">
+ <tr>
+    <td align="center"><h3>     Spo2     </h3></td>
+	<td></td>
+    <td align="center"><h3>     Heart rate      </h3></td> 
+    
+  </tr>
+   <tr>
+    <td align="center"><h3><div id="Spo2Value"></h3></div></td>
+    <td></td>
+	<td align="center"><h3><div id="bpmValue"></h3></div></td> 
+ 
+  </tr>
+
+</table>
+</div>
+</br>
+
+
+<div id="ecgChartContainer" style="height: 300px; width: 100%;">
+
+</div>
+<p></br></p>
+<div id="resChartContainer" style="height: 300px; width: 100%;">
+
+</div>
+<p></br></p>
+<!-- <div class="main_photo">
+<img src="home.jpg">
+    <img class="inlay" src="sphere2.gif" height="100" width="100" >
+    
+</div> -->
+
+</body>
+</html>
