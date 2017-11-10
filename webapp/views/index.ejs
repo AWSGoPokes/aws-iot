@@ -203,19 +203,19 @@ desired effect
 
       <!-- Sidebar Menu -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">HEADER</li>
+        <li class="header">Your Health</li>
         <!-- Optionally, you can add icons to the links -->
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>Link</span></a></li>
-        <li><a href="#"><i class="fa fa-link"></i> <span>Another Link</span></a></li>
+        <li class="active"><a href="#"><i class="fa fa-circle text-danger"></i> </i> <span>Live View</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>Overview</span></a></li>
         <li class="treeview">
-          <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
+          <a href="#"><i class="fa fa-link"></i> <span>Report</span>
             <span class="pull-right-container">
                 <i class="fa fa-angle-left pull-right"></i>
               </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="#">Link in level 2</a></li>
-            <li><a href="#">Link in level 2</a></li>
+            <li><a href="#">Weekly</a></li>
+            <li><a href="#">Monthy</a></li>
           </ul>
         </li>
       </ul>
@@ -252,7 +252,7 @@ desired effect
 
             <div class="info-box-content">
               <span class="info-box-text">SpO2</span>
-              <span class="info-box-number">90<small>%</small></span>
+              <span id="Spo2Value" class="info-box-number"></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -265,7 +265,7 @@ desired effect
 
             <div class="info-box-content">
               <span class="info-box-text">Heart Rate</span>
-              <span class="info-box-number">41,410</span>
+              <span id="bpmValue" class="info-box-number"></span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -278,11 +278,11 @@ desired effect
 
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-green"><i class="fa fa-smile-o"></i></span>
+            <span class="info-box-icon bg-yellow"><i class="fa fa-smile-o"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Emotion</span>
-              <span class="info-box-number">760</span>
+              <span id="EmotionValue" class="info-box-number">760</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -291,11 +291,11 @@ desired effect
         <!-- /.col -->
         <div class="col-md-3 col-sm-6 col-xs-12">
           <div class="info-box">
-            <span class="info-box-icon bg-yellow"><i class="fa fa-medkit"></i></span>
+            <span class="info-box-icon bg-green"><i class="fa fa-medkit"></i></span>
 
             <div class="info-box-content">
               <span class="info-box-text">Overall</span>
-              <span class="info-box-number">2,000</span>
+              <span id="OverfallValue" class="info-box-number">Normal</span>
             </div>
             <!-- /.info-box-content -->
           </div>
@@ -330,106 +330,34 @@ desired effect
             <!-- /.box-header -->
             <div class="box-body">
               <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-6">
                   <p class="text-center">
                     <strong>Live Electrocardiography (ECG)</strong>
                   </p>
 
                   <div class="chart">
                     <!-- Sales Chart Canvas -->
-                    <canvas id="salesChart" style="height: 180px;"></canvas>
+                    <div id="ecgChartContainer" style="height: 180px;"></div>
                   </div>
                   <!-- /.chart-responsive -->
                 </div>
                 <!-- /.col -->
-                <div class="col-md-4">
+                <div class="col-md-6">
                   <p class="text-center">
-                    <strong>Goal Completion</strong>
+                    <strong>Live Respiration Chart</strong>
                   </p>
 
-                  <div class="progress-group">
-                    <span class="progress-text">Add Products to Cart</span>
-                    <span class="progress-number"><b>160</b>/200</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-aqua" style="width: 80%"></div>
-                    </div>
+                  <div class="chart">
+                    <!-- Sales Chart Canvas -->
+                    <div id="resChartContainer" style="height: 180px;"></div>
                   </div>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Complete Purchase</span>
-                    <span class="progress-number"><b>310</b>/400</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-red" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Visit Premium Page</span>
-                    <span class="progress-number"><b>480</b>/800</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-green" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
-                  <div class="progress-group">
-                    <span class="progress-text">Send Inquiries</span>
-                    <span class="progress-number"><b>250</b>/500</span>
-
-                    <div class="progress sm">
-                      <div class="progress-bar progress-bar-yellow" style="width: 80%"></div>
-                    </div>
-                  </div>
-                  <!-- /.progress-group -->
+                  <!-- /.chart-responsive -->
                 </div>
                 <!-- /.col -->
               </div>
               <!-- /.row -->
             </div>
-            <!-- ./box-body -->
-            <div class="box-footer">
-              <div class="row">
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 17%</span>
-                    <h5 class="description-header">$35,210.43</h5>
-                    <span class="description-text">TOTAL REVENUE</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-yellow"><i class="fa fa-caret-left"></i> 0%</span>
-                    <h5 class="description-header">$10,390.90</h5>
-                    <span class="description-text">TOTAL COST</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block border-right">
-                    <span class="description-percentage text-green"><i class="fa fa-caret-up"></i> 20%</span>
-                    <h5 class="description-header">$24,813.53</h5>
-                    <span class="description-text">TOTAL PROFIT</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-                <!-- /.col -->
-                <div class="col-sm-3 col-xs-6">
-                  <div class="description-block">
-                    <span class="description-percentage text-red"><i class="fa fa-caret-down"></i> 18%</span>
-                    <h5 class="description-header">1200</h5>
-                    <span class="description-text">GOAL COMPLETIONS</span>
-                  </div>
-                  <!-- /.description-block -->
-                </div>
-              </div>
-              <!-- /.row -->
-            </div>
-            <!-- /.box-footer -->
+            
           </div>
           <!-- /.box -->
         </div>
@@ -467,9 +395,9 @@ desired effect
 <script src="javascripts/adminlte.min.js"></script>
 
     <!-- ChartJS -->
-<script src="javascripts/Chart.min.js"></script>
+<script src="javascripts/canvasjs.min.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-<script src="javascripts/dashboard2.js"></script>
+<script src="javascripts/ecg.js"></script>
 <!-- AdminLTE for demo purposes -->
 <!--<script src="dist/js/demo.js"></script>-->
 
