@@ -51,7 +51,7 @@ $(function () {
 	var spo2Value = [];
 	var bpmValue = [];
     var updateChart = function () {
-		var url = '/getdata'; 
+		var url = 'getdata.php'; 
 		var data = {'lastID': lastID}; // input for the PHP file
 
 		//$.getJSON(url, data, requestCallback);
