@@ -30,11 +30,11 @@ We used our custom built wireless IMU to collect body activity information. The 
 ## Challenges we ran into
 We ran into three challenges: limitted time budget, AWS learning curve and system integration.
 ### Limitted Time Bugdet
-We knew about the AWS IoT App Challenge only 21 days before deadline. It also took us a week to discuss about the challenge theme, our chance, and team setup. Therefore, there were technically less than 2 weeks left for us to brainstorm ideas, design, implementation/test and deploy our RuralCare systems. We had to turn off many cool features because we did not have enough time to implement them.
+This is our biggest challenge. We knew about the AWS IoT App Challenge only 21 days before deadline. It also took us a week to discuss about the challenge theme, our chance, and team setup. Therefore, there were technically less than 2 weeks left for us to brainstorm ideas, design, implementation/test and deploy our RuralCare systems. As a result, We had to turn off many cool features because we did not have enough time to implement them. There are also some helpful features that we built as prototype for proof of concepts.
 ### AWS Learning Curve
-
+Both two members in our team are AWS beginners. Minh is working on smart home, robotics and machine learning research topics so he has some experiences in working with AWS MQTT and EC2 . Tuan is working on hardware VLSI design and studying AWS IoTs and Alexa Apps as hobbies. To participate in this challenge, we both had to learning AWS IoTs concepts/tools/practices and it took us a significant portion of time before we can deploy our system.
 ### System Integration
-
+Instead of using available datasets and/or random data generator, our team made decision that we will use real sensors data in our project. Working with sensors and synchroning data periodically to AWS cloud is the first challenging task in our system.
 ## Accomplishments that we're proud of
 
 ## What we learned
