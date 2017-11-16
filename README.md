@@ -6,13 +6,12 @@ The situation is even worse in Oklahoma, with 30% of the population living in ru
 ** The motivation to help rural people led us to RuralCare, an innovative mobile app that combines the power of mobile app, cloud computing, and wireless sensors to benefits rural residents and healthcare providers. **
 
 ## What it does
-Ruralcare aims at providing a home health service which has:
-Features:
+Ruralcare aims at providing a home health service which has following features:
 -	Monitor biomedical data of human.
 -	Detect body activities via motion sensor
 -	Monitor hydration via drinking sound detection 
 -	Monitor negative emotion via heart signal
--	Provide doctors/caregivers a  visually real-time health metrics
+-	Provide doctors/caregivers a visually real-time health metrics
 -	Provide healthcare delivery via video call from doctors or home robot assistant
 ## How we built it
 ### Wearable unit
@@ -32,7 +31,10 @@ We used our custom built wireless IMU to collect body activity information. The 
 ### Home gateway:
 The data of all sensors are sent to a home gateway where the signals are preprocessed and input to pre-trained classification models . Then, raw data and inferred outputs are uploaded to Amazon cloud.
 
-Several models have been built based on both online and our own collected datasets. For example, 
+Several models have been built based on both online and our own collected datasets. For example:
+* Body activity recognition
+* Drinking sound detection
+* Negative emotion detection
 ### Amazon AWS Cloud: 
 ECG data is sent wirelessly via Bluetooth Low Energy (BLE) to the SmartJacket mobile app. The mobile app will periodically synchronize data via MQTT protocol to Amazon Cloud (AWS), where remote caregivers or doctor can access to monitor real-time ECG or other health statistic and evaluation in real-time.
 ### Models: on Cloud, we will build classification and predictive models to make the most out of existing health data (e.g. the model may detect disorders or output early health issue prediction). The model will be smarter over time when more data are available to learn.
