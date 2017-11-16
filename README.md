@@ -6,12 +6,14 @@ The situation is even worse in Oklahoma, with 30% of the population living in ru
 ** The motivation to help rural people led us to RuralCare, an innovative mobile app that combines the power of mobile app, cloud computing, and wireless sensors to benefits rural residents and healthcare providers. **
 
 ## What it does
-RuralCare includes four pillars: Smart Jacket (for rural residents to wear), Amazon AWS Cloud (to store all health data safely), Predictive Model (to predict diseases from data), and Mobile WebApp. All are described in detail as follows:
-
-* Smart Jacket: The prototype Smart Jacket includes textile ECG electrodes and a respiration belt. A single lead ECG signal is collected from the garment using the Lead-II configuration. A sensor platform and an MCU are put into a 3D-printed box integrated in the shirt. The signal is amplified and sampled at a rate of 200Hz, which is sufficient for detecting heart rate, studying heart rate variability, arrhythmias, and other heart-related disorders.
-* Amazon AWS Cloud: ECG data is sent wirelessly via Bluetooth Low Energy (BLE) to the SmartJacket mobile app. The mobile app will periodically synchronize data via MQTT protocol to Amazon Cloud (AWS), where remote caregivers or doctor can access to monitor real-time ECG or other health statistic and evaluation in real-time.
-* Models: on Cloud, we will build classification and predictive models to make the most out of existing health data (e.g. the model may detect disorders or output early health issue prediction). The model will be smarter over time when more data are available to learn.
-* Mobile App: Rural residents/doctors can use Mobile App to see in real-time all the visualized health data. More importantly, the health diagnosis outputs from the predictive models in the cloud are streamed back to the App, and an alert is raised whenever the resident is at risk. The remote caregiver may double check the real-time visualized health data shown in the app, or can set up voice call or video call to the resident. This forms a closed-loop healthcare system that provides timely healthcare delivery services.
+Ruralcare aims at providing a home health service which has:
+Features:
+-	Monitor biomedical data of human.
+-	Detect body activities via motion sensor
+-	Monitor hydration via drinking sound detection 
+-	Monitor negative emotion via heart signal
+-	Provide doctors/caregivers a  visually real-time health metrics
+-	Provide healthcare delivery via video call from doctors or home robot assistant
 ## How we built it
 ### Wearable unit
 The wearable unit is worn by the human and is used to collect physiological signals and activity data. The data collected from this system include electrocardiogram (ECG), blood oxygen concentration (SpO2), respiration rate, acoustic activity, and body activity. The signals are sampled and framed using a low cost Arduino-based MCU and a sensor interface board. The data are time-stamped to allow synchronization with environmental sensors in the smart home. The components of the wearable unit are shown in Fig.1. Below we describe the function of each component.
@@ -26,6 +28,22 @@ Smartwatch: The eZ430-Chronos Smartwatch is used to collect hand motion data. It
 Acoustic sensor: A throat microphone is used to record audio signals from the throat area. The throat microphone senses vibrations from the wearer’s throat instead of sound signals which allows picking up sounds in noisy and windy environments. It has a sensitivity of −66 dB ± 3 dB and can pick up sound signals from 20 Hz–16 000 Hz which is sufficient for detecting various throat activities. The acoustic signal is sampled at a rate of 16 000 Hz.
 * Inertial Measurement Unit (IMU): 
 We used our custom built wireless IMU to collect body activity information. The IMU node we developed consists of a VN-100 orientation sensor module from VectorNav, Inc. for motion sensing, an XBee RF module for wireless communication, and a power management unit to prolong the battery life. The typical operating voltage range is from 3.1 V to 5.5 V, and the power supply current is 65 mA in the normal operation mode. The IMU signal is sampled at 20 Hz which is used for activity recognition. The motion data include orientations (roll, pitch, and yaw), 3D acceleration, 3D angular rate, and 3D magnetic field. The sensor has a very small footprint, similar to a quarter, which is attached to the right thigh of the human subject to sense the body movement.
+
+### Home gateway:
+The data of all sensors are sent to a home gateway where the signals are preprocessed and input to pre-trained classification models . Then, raw data and inferred outputs are uploaded to Amazon cloud.
+
+Several models have been built based on both online and our own collected datasets. For example, 
+### Amazon AWS Cloud: 
+ECG data is sent wirelessly via Bluetooth Low Energy (BLE) to the SmartJacket mobile app. The mobile app will periodically synchronize data via MQTT protocol to Amazon Cloud (AWS), where remote caregivers or doctor can access to monitor real-time ECG or other health statistic and evaluation in real-time.
+### Models: on Cloud, we will build classification and predictive models to make the most out of existing health data (e.g. the model may detect disorders or output early health issue prediction). The model will be smarter over time when more data are available to learn.
+### Mobile App: Rural residents/doctors can use Mobile App to see in real-time all the visualized health data. More importantly, the health diagnosis outputs from the predictive models in the cloud are streamed back to the App, and an alert is raised whenever the resident is at risk. The remote caregiver may double check the real-time visualized health data shown in the app, or can set up voice call or video call to the resident. This forms a closed-loop healthcare system that provides timely healthcare delivery services.
+## Challenges we ran into
+
+## Accomplishments that we're proud of
+
+## What we learned
+
+## What's next for RuralCare
 
 ## Challenges we ran into
 We ran into three challenges: limitted time budget, AWS learning curve and system integration.
