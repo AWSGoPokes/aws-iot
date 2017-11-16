@@ -9,7 +9,6 @@ The situation is even worse in Oklahoma, with 30% of the population living in ru
 Ruralcare aims at providing a home health service which has following features:
 -	Monitor biomedical data of human.
 -	Detect body activities via motion sensor
--	Monitor hydration via drinking sound detection 
 -	Monitor negative emotion via heart signal
 -	Provide doctors/caregivers a visually real-time health metrics
 -	Provide healthcare delivery via video call from doctors or home robot assistant
@@ -24,7 +23,6 @@ The prototype smart garment includes textile ECG electrodes and a respiration be
 * Pulse Oximeter: 
 The Pulse Oximeter is a non-invasive device used to estimate arterial oxygen saturation which refers to the amount of oxygenated hemoglobin in the blood. The SpO2 signal is sampled at 20 Hz and is collected several times a day depending on the need.
 Smartwatch: The eZ430-Chronos Smartwatch is used to collect hand motion data. It uses a CC430F6137 MCU with a 915 MHz wireless transceiver. The watch integrates a 3D accelerometer. The accelerometer signal is wirelessly transmitted to the home gateway at 33 Hz.
-Acoustic sensor: A throat microphone is used to record audio signals from the throat area. The throat microphone senses vibrations from the wearer’s throat instead of sound signals which allows picking up sounds in noisy and windy environments. It has a sensitivity of −66 dB ± 3 dB and can pick up sound signals from 20 Hz–16 000 Hz which is sufficient for detecting various throat activities. The acoustic signal is sampled at a rate of 16 000 Hz.
 * Inertial Measurement Unit (IMU): 
 We used our custom built wireless IMU to collect body activity information. The IMU node we developed consists of a VN-100 orientation sensor module from VectorNav, Inc. for motion sensing, an XBee RF module for wireless communication, and a power management unit to prolong the battery life. The typical operating voltage range is from 3.1 V to 5.5 V, and the power supply current is 65 mA in the normal operation mode. The IMU signal is sampled at 20 Hz which is used for activity recognition. The motion data include orientations (roll, pitch, and yaw), 3D acceleration, 3D angular rate, and 3D magnetic field. The sensor has a very small footprint, similar to a quarter, which is attached to the right thigh of the human subject to sense the body movement.
 
@@ -33,7 +31,6 @@ The data of all sensors are sent to a home gateway where the signals are preproc
 
 Several models have been built based on both online and our own collected datasets. For example:
 * Body activity recognition
-* Drinking sound detection
 * Negative emotion detection
 ### Amazon AWS Cloud: 
 ECG data is sent wirelessly via Bluetooth Low Energy (BLE) to the SmartJacket mobile app. The mobile app will periodically synchronize data via MQTT protocol to Amazon Cloud (AWS), where remote caregivers or doctor can access to monitor real-time ECG or other health statistic and evaluation in real-time.
