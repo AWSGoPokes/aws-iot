@@ -28,6 +28,12 @@ Acoustic sensor: A throat microphone is used to record audio signals from the th
 We used our custom built wireless IMU to collect body activity information. The IMU node we developed consists of a VN-100 orientation sensor module from VectorNav, Inc. for motion sensing, an XBee RF module for wireless communication, and a power management unit to prolong the battery life. The typical operating voltage range is from 3.1 V to 5.5 V, and the power supply current is 65 mA in the normal operation mode. The IMU signal is sampled at 20 Hz which is used for activity recognition. The motion data include orientations (roll, pitch, and yaw), 3D acceleration, 3D angular rate, and 3D magnetic field. The sensor has a very small footprint, similar to a quarter, which is attached to the right thigh of the human subject to sense the body movement.
 
 ## Challenges we ran into
+We ran into three challenges: limitted time budget, AWS learning curve and system integration.
+### Limitted Time Bugdet
+We knew about the AWS IoT App Challenge only 21 days before deadline. It also took us a week to discuss about the challenge theme, our chance, and team setup. 
+### AWS Learning Curve
+
+### System Integration
 
 ## Accomplishments that we're proud of
 
