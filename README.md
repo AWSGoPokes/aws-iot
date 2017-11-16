@@ -34,7 +34,9 @@ This is our biggest challenge. We knew about the AWS IoT App Challenge only 21 d
 ### AWS Learning Curve
 Both two members in our team are AWS beginners. Minh is working on smart home, robotics and machine learning research topics so he has some experiences in working with AWS MQTT and EC2 . Tuan is working on hardware VLSI design and studying AWS IoTs and Alexa Apps as hobbies. To participate in this challenge, we both had to learning AWS IoTs concepts/tools/practices and it took us a significant portion of time before we can deploy our system.
 ### System Integration
-Instead of using available datasets and/or random data generator, our team made decision that we will use real sensors data in our project. Working with sensors and synchroning data periodically to AWS cloud is the first challenging task in our system.
+Instead of using available datasets and/or random data generator, our team made decision that we will use real sensors data in our project. The code for collecting data and synchronize with AWS was written in Matlab.
+We already built a model to predict the emotion in Python. 
+
 ## Accomplishments that we're proud of
 
 ## What we learned
