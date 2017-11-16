@@ -13,7 +13,13 @@ RuralCare includes four pillars: Smart Jacket (for rural residents to wear), Ama
 * Models: on Cloud, we will build classification and predictive models to make the most out of existing health data (e.g. the model may detect disorders or output early health issue prediction). The model will be smarter over time when more data are available to learn.
 * Mobile App: Rural residents/doctors can use Mobile App to see in real-time all the visualized health data. More importantly, the health diagnosis outputs from the predictive models in the cloud are streamed back to the App, and an alert is raised whenever the resident is at risk. The remote caregiver may double check the real-time visualized health data shown in the app, or can set up voice call or video call to the resident. This forms a closed-loop healthcare system that provides timely healthcare delivery services.
 ## How we built it
-abc
+### Wearable unit
+#### Customized Shirt
+#### Sensors
+
+#### Circuit
+
+
 ## Challenges we ran into
 
 ## Accomplishments that we're proud of
