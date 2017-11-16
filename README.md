@@ -18,13 +18,13 @@ The wearable unit is worn by the human and is used to collect physiological sign
 
 Fig. 1. The components of the wearable unit.
 
-*Smart garment: 
+* Smart garment: 
 The prototype smart garment includes textile ECG electrodes and a respiration belt. A single lead ECG signal is collected from the garment using the Lead-II configuration. The signal is amplified and sampled at a rate of 250 Hz, which is sufficient for detecting heart rate, studying heart rate variability and arrhythmias. The ECG signal is preprocessed by applying the Pan Tompkins algorithm, which performs a bandpass filter(5–15 Hz), a derivating filter to highlight the QRS complex. Thus, the RR interval is calculated, which is used to infer the user’s heart rate. The respiration belt is an inductive transducer which measures the changes in thoracic or abdominal circumference during respiration. These measurements can indicate inhalation, expiration, and breathing strength which can be used to derive breathing rate. The respiration rate of a normal adult is around 12–30 breaths per minute, and in our system we selected the sampling rate of 20 Hz, which is sufficient to capture the respiratory signal, and a low pass filter with a cutoff frequency of 0.1 Hz is applied.
-*Pulse Oximeter: 
+* Pulse Oximeter: 
 The Pulse Oximeter is a non-invasive device used to estimate arterial oxygen saturation which refers to the amount of oxygenated hemoglobin in the blood. The SpO2 signal is sampled at 20 Hz and is collected several times a day depending on the need.
 Smartwatch: The eZ430-Chronos Smartwatch is used to collect hand motion data. It uses a CC430F6137 MCU with a 915 MHz wireless transceiver. The watch integrates a 3D accelerometer. The accelerometer signal is wirelessly transmitted to the home gateway at 33 Hz.
 Acoustic sensor: A throat microphone is used to record audio signals from the throat area. The throat microphone senses vibrations from the wearer’s throat instead of sound signals which allows picking up sounds in noisy and windy environments. It has a sensitivity of −66 dB ± 3 dB and can pick up sound signals from 20 Hz–16 000 Hz which is sufficient for detecting various throat activities. The acoustic signal is sampled at a rate of 16 000 Hz.
-*Inertial Measurement Unit (IMU): 
+* Inertial Measurement Unit (IMU): 
 We used our custom built wireless IMU to collect body activity information. The IMU node we developed consists of a VN-100 orientation sensor module from VectorNav, Inc. for motion sensing, an XBee RF module for wireless communication, and a power management unit to prolong the battery life. The typical operating voltage range is from 3.1 V to 5.5 V, and the power supply current is 65 mA in the normal operation mode. The IMU signal is sampled at 20 Hz which is used for activity recognition. The motion data include orientations (roll, pitch, and yaw), 3D acceleration, 3D angular rate, and 3D magnetic field. The sensor has a very small footprint, similar to a quarter, which is attached to the right thigh of the human subject to sense the body movement.
 
 ## Challenges we ran into
