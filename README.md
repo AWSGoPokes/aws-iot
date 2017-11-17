@@ -9,6 +9,7 @@ The situation is even worse in Oklahoma, with 30% of the population living in ru
 Ruralcare aims at providing a home health service which has following features:
 -	Monitor biomedical data of human.
 -	Detect body activities via motion sensor
+-	Monitor hydration via drinking sound detection 
 -	Monitor negative emotion via heart signal
 -	Provide doctors/caregivers a visually real-time health metrics
 -	Provide healthcare delivery via video call from doctors or home robot assistant
@@ -22,20 +23,22 @@ Fig. 1. The components of the wearable unit.
 The prototype smart garment includes textile ECG electrodes and a respiration belt. A single lead ECG signal is collected from the garment using the Lead-II configuration. The signal is amplified and sampled at a rate of 250 Hz, which is sufficient for detecting heart rate, studying heart rate variability and arrhythmias. The ECG signal is preprocessed by applying the Pan Tompkins algorithm, which performs a bandpass filter(5–15 Hz), a derivating filter to highlight the QRS complex. Thus, the RR interval is calculated, which is used to infer the user’s heart rate. The respiration belt is an inductive transducer which measures the changes in thoracic or abdominal circumference during respiration. These measurements can indicate inhalation, expiration, and breathing strength which can be used to derive breathing rate. The respiration rate of a normal adult is around 12–30 breaths per minute, and in our system we selected the sampling rate of 20 Hz, which is sufficient to capture the respiratory signal, and a low pass filter with a cutoff frequency of 0.1 Hz is applied.
 * Pulse Oximeter: 
 The Pulse Oximeter is a non-invasive device used to estimate arterial oxygen saturation which refers to the amount of oxygenated hemoglobin in the blood. The SpO2 signal is sampled at 20 Hz and is collected several times a day depending on the need.
-Smartwatch: The eZ430-Chronos Smartwatch is used to collect hand motion data. It uses a CC430F6137 MCU with a 915 MHz wireless transceiver. The watch integrates a 3D accelerometer. The accelerometer signal is wirelessly transmitted to the home gateway at 33 Hz.
+* Smartwatch: 
+The eZ430-Chronos Smartwatch is used to collect hand motion data. It uses a CC430F6137 MCU with a 915 MHz wireless transceiver. The watch integrates a 3D accelerometer. The accelerometer signal is wirelessly transmitted to the home gateway at 33 Hz.
+* Acoustic sensor: 
+A throat microphone is used to record audio signals from the throat area. The throat microphone senses vibrations from the wearer’s throat instead of sound signals which allows picking up sounds in noisy and windy environments. It has a sensitivity of −66 dB ± 3 dB and can pick up sound signals from 20 Hz–16 000 Hz which is sufficient for detecting various throat activities. 
 * Inertial Measurement Unit (IMU): 
-We used our custom built wireless IMU to collect body activity information. The IMU node we developed consists of a VN-100 orientation sensor module from VectorNav, Inc. for motion sensing, an XBee RF module for wireless communication, and a power management unit to prolong the battery life. The typical operating voltage range is from 3.1 V to 5.5 V, and the power supply current is 65 mA in the normal operation mode. The IMU signal is sampled at 20 Hz which is used for activity recognition. The motion data include orientations (roll, pitch, and yaw), 3D acceleration, 3D angular rate, and 3D magnetic field. The sensor has a very small footprint, similar to a quarter, which is attached to the right thigh of the human subject to sense the body movement.
+We used our custom built wireless IMU to collect body activity information. The IMU node we developed consists of a VN-100 orientation sensor module from VectorNav, Inc. for motion sensing, an XBee RF module for wireless communication, and a power management unit to prolong the battery life. The motion data include orientations (roll, pitch, and yaw), 3D acceleration, 3D angular rate, and 3D magnetic field.
 
 ### Home gateway:
 The data of all sensors are sent to a home gateway where the signals are preprocessed and input to pre-trained classification models . Then, raw data and inferred outputs are uploaded to Amazon cloud.
 
 Several models have been built based on both online and our own collected datasets. For example:
 * Body activity recognition
+* Drinking sound detection
 * Negative emotion detection
 ### Amazon AWS Cloud: 
-ECG data is sent wirelessly via Bluetooth Low Energy (BLE) to the SmartJacket mobile app. The mobile app will periodically synchronize data via MQTT protocol to Amazon Cloud (AWS), where remote caregivers or doctor can access to monitor real-time ECG or other health statistic and evaluation in real-time.
-### Models: on Cloud, we will build classification and predictive models to make the most out of existing health data (e.g. the model may detect disorders or output early health issue prediction). The model will be smarter over time when more data are available to learn.
-### Mobile App: Rural residents/doctors can use Mobile App to see in real-time all the visualized health data. More importantly, the health diagnosis outputs from the predictive models in the cloud are streamed back to the App, and an alert is raised whenever the resident is at risk. The remote caregiver may double check the real-time visualized health data shown in the app, or can set up voice call or video call to the resident. This forms a closed-loop healthcare system that provides timely healthcare delivery services.
+An instance EC2 is created to feature a web server running PHP and a MySQL database server. All data from the gateway are sent to the database, then visually shown in frontend interface. Residents and doctors can use Web/Mobile App to see in real-time all the visualized health data. More importantly, alerts/notifications are triggered whenever the resident is at risk, for example when he or she is recognized as angry, depressed, dehydrated. The remote caregiver may double check the real-time visualized health data shown in the app, or can set up voice call or video call to the resident. This forms a closed-loop healthcare system that provides timely healthcare delivery services.
 ## Challenges we ran into
 
 ## Accomplishments that we're proud of
